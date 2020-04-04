@@ -91,31 +91,31 @@ function GetInfiEmployer(data){
 }
 
 function AddToDataEmployer(){
-    var nameEmployer = $("#in_nameEmployer").val();
-    var prenoEmployer = $("#in_prenoEmployer").val();
-    var AgeEmployer = $("#in_AgeEmployer").val();
-    var Salaire = $("#in_Salaire").val();
-    var nameDepartement = localStorage.getItem("NameDepart");
-    var IdEmployer = valueId;
+    var nom = $("#in_nameEmployer").val();
+    var Prenom = $("#in_prenoEmployer").val();
+    var Age = $("#in_AgeEmployer").val();
+    var salaire = $("#in_Salaire").val();
+    var departement = localStorage.getItem("NameDepart");
+    var Matricule = 'MA'+valueId;
     // console.log('if');
     
-    if( nameEmployer != "" && nameDepartement != "" && Salaire != ""){
+    if( nom != "" && departement != "" && salaire != ""){
          $.ajax({
             url:'/AddNewEmployer',
             type:'post',
-            data:{IdEmployer,nameEmployer,prenoEmployer,AgeEmployer,Salaire,nameDepartement},
+            data:{Matricule,nom,Prenom,Age,salaire,departement},
             success:function(response){
                 if(response.request){
-                    alert('kaayn');
+                    alert('kaaaayn ');
                     getTableEmployer();
                 } 
             },
             error:function(){
-                alert('waalyi1');
+                alert('waalyi1 A sat');
             }
         });
     }else{
-        alert('waayli2');
+        alert('waayli2 A sat');
     }
 }
 
@@ -125,22 +125,35 @@ function AddToDataEmployer(){
 
 
 function AddToTableEmployer(data){
-    
-    // data correc
+    var conturid =1;
     var nameDepartement = '';
     $("#touEmployer").html(nameDepartement);
     $.each(data, function (key, value) {
-        if(value.nameDepartement== gv){
+        if(value.departement== gv){
+            nameDepartement +='<tr class="1">';
+            nameDepartement +='<th scope="row">' + value.Matricule + '</th>';
+            nameDepartement +='<th scope="row">' + value.nom + '</th>';
+            nameDepartement +='<th scope="row" class="2"> <input type="button" onclick="biyenliya(this.id)" id="event_afficher'+ conturid +'" value="tous autres détails"></th>';
+            nameDepartement +='</tr>';
+
             nameDepartement +='<tr>';
-            nameDepartement +='<th scope="row">' + value.IdEmployer + '</th>';
-            nameDepartement +='<th scope="row">' + value.nameEmployer + '</th>';
-            nameDepartement +='<th scope="row">' + value.prenoEmployer + '</th>';
-            nameDepartement +='<th scope="row">' + value.AgeEmployer + '</th>';
-            nameDepartement +='<th scope="row">' + value.Salaire + '</th>';
-            nameDepartement +='<th scope="row">' + value.nameDepartement + '</th>';
-            nameDepartement +='<th scope="row"><input type="button" value="afficher detail"></th>';
-            nameDepartement +='</tr>';                
+            nameDepartement +='<th scope="row" colspan="3">';
+            nameDepartement +='<div class="ban" id="event_afficher'+conturid+'_div"style="display: none;">'
+            nameDepartement +='<div><p>Matricule : ' + value.Matricule + '</p></div>';
+            nameDepartement +='<div><p>Nom : ' + value.nom + ' </p></div>';
+            nameDepartement +='<div><p>Prenom : ' + value.Prenom + ':</p></div>';
+            nameDepartement +='<div><p>Age : ' + value.Age + '</p></div>';
+            nameDepartement +='<div><p>salaire : ' + value.salaire + '</p></div>';
+            nameDepartement +='<div>Departement : ' + value.departement + '</p></div>';
+            nameDepartement +='</div>';
+            nameDepartement +='</th>';
+            nameDepartement +='</tr>';
+            conturid ++;
         }
     });
     $("#touEmployer").append(nameDepartement);
+}
+function biyenliya(d){
+    var id_div = '#'+d+'_div';
+    $(id_div).slideToggle(1000);  
 }
