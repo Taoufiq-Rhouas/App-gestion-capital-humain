@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+   <!-- Navigation -->
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="Images/LogoCompany.png" width="80px" height="60px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#"><i class="fas fa-user"></i> <span id="useremail"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#" onclick="window.location.href = 'login.html';"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  
+    <section>
+        <div>
+            <center>
+                <div class="card mt-5" style="width: 50%">
+                    <img class="card-img-top" src="Images/LogoCompany.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h3 class="card-title">Name Departement : <span id="namedepartemente"></span> </h3><hr>
+                      <!-- <h1>lhsab : <span id="bali"></span></h1> -->
+                      <div id="resultat">
+
+                      </div>
+                      <!-- <h3 class="card-title">Name Departement : <span id="namedepartemente"></span> </h3><hr>
+                      <p class="card-text"> <strong>Description for departement : </strong><span id=""></span></p><hr>
+                      <p class="card-title"> <strong>Department Boss : </strong><span id=""></span></p><hr> -->
+                      <center>
+                        <!-- <form class="form-inline justify-content-center">
+                            <div class="form-group mb-2">
+                              <label>Employee</label>
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                              <input type="text" class="form-control" id="in_nameEmployer" name="in_nameEmployer" placeholder="Add Employee">
+                            </div>
+                            
+                            <input type="button" id="SaveD" class="btn btn-primary mb-2" value="addr">
+                          </form> -->
+                      </center>
+                      <div class="card mt-5" style="width: 85%;background-color: lightsteelblue;padding: 10px;">
+                        <form>
+                          <div class="form-group">
+                            <label>Name Salarie</label>
+                            <input type="text" class="form-control" id="in_nameEmployer" name="in_nameEmployer" placeholder="Name">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                          </div>
+                          <div class="form-group">
+                            <label>Prenom Salarier</label>
+                            <input type="text" class="form-control" id="in_prenoEmployer" name="in_prenoEmployer" placeholder="Prenom">
+                          </div>
+                          <div class="form-group">
+                            <label>Age Salarier</label>
+                            <input type="text" class="form-control" id="in_AgeEmployer" name="in_AgeEmployer" placeholder="Age">
+                          </div>
+                          <div class="form-group">
+                            <label>salaire</label>
+                            <input type="text" class="form-control" id="in_Salaire" name="in_Salaire" placeholder="Salaire">
+                          </div>
+                          <!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div> -->
+                          <button type="button" id="SaveD" class="btn btn-primary">Ajoutre Salarier</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+            </center>
+        </div>
+    </section>
+
+    <!-- <section>
+      <h1>rir pour le test</h1>
+      <div class="table-responsive-sm">
+        <table class="table table-striped custab">
+        <thead>
+        <a href="#" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#exampleModalCenter"><b>+</b> Add new Company</a>
+            <tr>
+                <th>Name</th>
+                <th>Local</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody id="TableCompany">
+    
+        </tbody>
+        </table>
+      </div>
+    </section> -->
+
+    <section>
+        <center>
+            <div class="card mt-5 mb-5" style="width: 80%">
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">ID Employee</th>
+                        <th scope="col">Nom Employee</th>
+                        <th scope="col">Prenom Employee</th>
+                        <th scope="col">Age Employee</th>
+                        <th scope="col">salaire</th>
+                        <th scope="col">Nom Department</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="touEmployer">
+                      <!-- <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+                </div>
+        </center>
+          
+          <!-- <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table> -->
+    </section>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+ integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="../js/Employer.js"></script>
+  </body>
+</html>
